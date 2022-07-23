@@ -21,7 +21,7 @@ from blog.models import Article
 class ArticleList(ListCreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
-
+        
 
 class ArticleDetail(RetrieveUpdateDestroyAPIView):
     queryset = Article.objects.all()
@@ -38,6 +38,7 @@ class ArticleDelete(RetrieveDestroyAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
     lookup_field = 'pk'
+
 
 class UserList(ListCreateAPIView):
     queryset = User.objects.all()
