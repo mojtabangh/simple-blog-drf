@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework.authtoken import views
-
+from dj_rest_auth.views import PasswordResetConfirmView
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/api-token-auth/', views.obtain_auth_token),
+    path('password/reset/confirm/<uid64>/<token>', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('api/rest-auth/', include('dj_rest_auth.urls')),
+    path('api/rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path('api/', include('api.urls')),
     path('', include('blog.urls')),
 ]

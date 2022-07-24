@@ -1,3 +1,4 @@
+from rest_framework.views import APIView
 from rest_framework.generics import (
     ListAPIView,
     ListCreateAPIView,
@@ -9,6 +10,7 @@ from rest_framework.generics import (
 )
 from rest_framework.permissions import (
     IsAdminUser,
+    IsAuthenticated,
 )
 from django.contrib.auth.models import User
 
@@ -50,3 +52,4 @@ class UserDetail(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = (IsSuperUserOrStaffReadOnly,)
+
