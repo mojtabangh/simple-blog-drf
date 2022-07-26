@@ -147,7 +147,7 @@ REST_FRAMEWORK = {
         'api.permissions.IsStaffOrReadOnly',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ],
 }
 
@@ -161,4 +161,8 @@ CKEDITOR_CONFIGS = {
 
 SITE_ID = 1
 
+# DjRest and JWT configuration
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'access-drf'
+JWT_AUTH_REFRESH_COOKIE = 'refresh-drf'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
