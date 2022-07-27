@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'ckeditor',
+    'django_filters',
     # Local Apps
     'blog.apps.BlogConfig',
     'api.apps.ApiConfig',
@@ -149,6 +150,9 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+        ]
 }
 
 # CKeditor config
