@@ -5,8 +5,8 @@ from .views import UserViewSet, ArticleViewSet
 app_name = 'api'
 
 router = routers.SimpleRouter()
-router.register('users', UserViewSet)
-router.register('', ArticleViewSet)
+router.register('users', UserViewSet, basename='users')
+router.register('articles', ArticleViewSet, basename='articles')
 
 urlpatterns = [
     path('', include(router.urls)),
