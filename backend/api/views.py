@@ -25,6 +25,8 @@ class ArticleViewSet(ModelViewSet):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
     filterset_fields = ['status', 'author__username']
+    ordering_fields = ['published', 'status']
+    ordering = ['-published',]
     search_fields = [
         'title',
         'content',
