@@ -2,7 +2,7 @@
 ![Django 4.0.6](https://img.shields.io/badge/Django-4.0.6-green.svg)
 [![license](https://img.shields.io/github/license/mojtabangh/simple-blog-drf)](https://github.com/mojtabangh/simple-blog-drf/blob/master/LICENSE)
 ## Overview
-Django-blog is an open-source blog management platform built on the Django Web Framework.
+Django-blog is an open-source blog management platform built with the Django Web Framework.
 ## Project Setup
 **Setup virtualenv**
 ```sh
@@ -15,7 +15,8 @@ https://github.com/mojtabangh/simple-blog-drf.git
 pip install -r requirements.txt
 ```
 **Migrate and Start Server**
-Go to the **src** directory and run the following commands:
+
+Go to the **backend** directory and run the following commands:
 ```sh
 python manage.py makemigrations
 python manage.py migrate
