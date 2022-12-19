@@ -15,7 +15,7 @@ from rest_framework.permissions import (
 )
 from django.contrib.auth import get_user_model
 
-from api.serializers import ArticleSerializer, UserSerializer
+from api.serializers import ArticleSerializer, UserSerializer, AuthorSerializer
 from api.permissions import IsSuperUser, IsAuthorOrReadOnly, IsStaffOrReadOnly, IsSuperUserOrStaffReadOnly
 from blog.models import Article
 
@@ -48,3 +48,8 @@ class UserViewSet(ModelViewSet):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
     permission_classes = (IsSuperUserOrStaffReadOnly,)
+
+
+class AuthorRetrieve(RetrieveAPIView):
+    queryset = get_user_model().objects.filter(is_staff=True)
+    serializer_class = AuthorSerializer
